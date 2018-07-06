@@ -3,6 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
   <title>All of us</title>
   <style>
     .studentpic {width: 450px; height: 450px; float:left }
@@ -11,21 +15,36 @@
 
 <body>
  <h1>Hello!</h1> 
-    <div class="student">
     <h2>Welcome to 5110/7110</h2>
-        <div id="studentLinks">
-          
-          /div>
-   
-        
-
-   <div class="student">
-    <h2>name</h2>
-        <div class="studentpic"><img src="img/gina.jpg"></div>
-    replace this with basic information about yourself
-        even more information about me!
-        
+    <div id="alldivs">
+<!--
+    <div id="student0">
     </div>
+    <div id="student1">
+    </div>
+     <div id="student2">
+    </div>
+-->
+        </div>
 </body>
+        <script>
+$( document ).ready(function() {
+ let sNames = ["one","two","three"];   
+    for (let counter = 0; counter < sNames.length; counter++)
+{
+ let fullName = sNames[counter]+".html";
+    let content = "<div id=student"+counter+"></div>";
+    $('#alldivs').append(content);
+       $('#student'+counter).load(fullName);
+    console.log(fullName);
+
+}
+
+    
+    
+
+});
+        
+        </script>
 </html>
  
